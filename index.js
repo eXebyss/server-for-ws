@@ -10,7 +10,7 @@ const PORT = process.env.PORT || config.get('serverPort')
 app.use(cors())
 app.use(express.json())
 
-app.ws('/ws', (ws, req) => {
+app.ws('/websocket', (ws, req) => {
 	ws.on('message', function (message) {
 		message = JSON.parse(message)
 		switch (message.event) {
